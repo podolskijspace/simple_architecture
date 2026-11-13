@@ -24,7 +24,7 @@ export const Main = () => {
   return (
     <main className={s.page}>
       <Header />
-      <Search hasSearch={hasSearch} search={search} onSearch={onSearch} />
+      <Search search={search} onSearch={onSearch} />
       {hasSearch && (
         <Body
           movies={filteredData}
