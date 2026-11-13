@@ -1,4 +1,4 @@
-import { useShows } from "@/cases/useShows.ts";
+import { useShows } from "./useShows.ts";
 import { useMemo, useState } from "react";
 import { useDebounce } from "use-debounce";
 
