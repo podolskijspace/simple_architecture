@@ -1,4 +1,4 @@
-import s from "./Main.module.css";
+import styles from "./Main.module.css";
 import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { Search } from "./Search/Search.tsx";
@@ -22,7 +22,7 @@ export const Main = () => {
   } = usePresenter();
 
   return (
-    <main className={s.page}>
+    <main className={styles.page}>
       <Header />
       <Search search={search} onSearch={onSearch} />
       {hasSearch && (

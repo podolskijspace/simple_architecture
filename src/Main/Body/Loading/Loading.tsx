@@ -1,19 +1,19 @@
 import { Fragment } from "react";
-import s from "./Loading.module.css";
+import styles from "./Loading.module.css";
 
 export const Loading = () => {
   return (
     <Fragment>
-      <p className={s.srOnly} role="status">
+      <p className={styles.srOnly} role="status">
         Loading search results
       </p>
-      <div className={s.grid} aria-hidden="true">
+      <div className={styles.grid} aria-hidden="true">
         {Array.from({ length: 8 }, (_, index) => (
-          <div key={index} className={s.movie}>
-            <div className={`${s.poster} ${s.skeleton}`} />
-            <div className={s.movieBody}>
-              <div className={`${s.skeleton} ${s.skeletonTitle}`} />
-              <div className={`${s.skeleton} ${s.skeletonMeta}`} />
+          <div key={index} className={styles.movie}>
+            <div className={`${styles.poster} ${styles.skeleton}`} />
+            <div className={styles.movieBody}>
+              <div className={`${styles.skeleton} ${styles.skeletonTitle}`} />
+              <div className={`${styles.skeleton} ${styles.skeletonMeta}`} />
             </div>
           </div>
         ))}

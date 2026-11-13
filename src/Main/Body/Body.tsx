@@ -1,6 +1,6 @@
 import { Loading } from "./Loading/Loading";
 import { Error } from "./Error/Error";
-import s from "./Body.module.css";
+import styles from "./Body.module.css";
 import type { Movie } from "@/types/Movie.ts";
 import type { Dispatch, DispatchWithoutAction } from "react";
 import { Empty } from "./Empty/Empty.tsx";
@@ -32,11 +32,11 @@ export const Body = (props: Props) => {
 
   return (
     <section
-      className={s.results}
+      className={styles.results}
       aria-labelledby="results-title"
       aria-busy={isPending}
     >
-      <div className={s.resultsHeader}>
+      <div className={styles.resultsHeader}>
         <h2 id="results-title">
           {isPending ? "Finding your story…" : "Search results"}
         </h2>
@@ -47,12 +47,12 @@ export const Body = (props: Props) => {
         )}
       </div>
       {genres.length > 0 && (
-        <div className={s.genres} role="group" aria-label="Genres">
+        <div className={styles.genres} role="group" aria-label="Genres">
           {genres.map((currGenre) => (
             <button
               key={currGenre}
               type="button"
-              className={`${s.genreBadge} ${currGenre === genre ? s.genreBadgeActive : ""}`}
+              className={`${styles.genreBadge} ${currGenre === genre ? styles.genreBadgeActive : ""}`}
               aria-pressed={currGenre === genre}
               onClick={() => onPickGenre(currGenre)}
             >

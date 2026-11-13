@@ -1,8 +1,8 @@
-import s from "./Footer.module.css";
+import styles from "./Footer.module.css";
 
 export const Footer = () => {
   return (
-    <footer className={s.footer}>
+    <footer className={styles.footer}>
       <span aria-hidden="true">✳</span>
       <p>Great stories start with curiosity.</p>
       <small>Popcorn is optional.</small>

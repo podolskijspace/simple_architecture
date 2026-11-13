@@ -1,4 +1,4 @@
-import s from "./MovieItem.module.css";
+import styles from "./MovieItem.module.css";
 import type { Movie } from "@/types/Movie.ts";
 
 interface Props {
@@ -6,15 +6,17 @@ interface Props {
 }
 export const MovieItem = ({ show }: Props) => {
   return (
-    <article className={s.movie} key={show.id}>
+    <article className={styles.movie} key={show.id}>
       <a
-        className={s.movieLink}
+        className={styles.movieLink}
         href={show.url}
         target="_blank"
         rel="noreferrer"
       >
-        <div className={s.poster}>
-          <span className={s.noPoster}>Poster still behind the scenes</span>
+        <div className={styles.poster}>
+          <span className={styles.noPoster}>
+            Poster still behind the scenes
+          </span>
           {show.image?.medium && (
             <img
               src={show.image.medium}
@@ -27,24 +29,24 @@ export const MovieItem = ({ show }: Props) => {
           )}
           {show.rating?.average != null && (
             <span
-              className={s.rating}
+              className={styles.rating}
               aria-label={`Rated ${show.rating.average} out of 10`}
             >
               ★ {show.rating.average.toFixed(1)}
             </span>
           )}
         </div>
-        <div className={s.movieBody}>
+        <div className={styles.movieBody}>
           <h3>{show.name}</h3>
           <p>
             {[show.premiered?.slice(0, 4), show.language]
               .filter(Boolean)
               .join(" · ") || "Details coming soon"}
           </p>
-          <span className={s.genres}>
+          <span className={styles.genres}>
             {show.genres.slice(0, 2).join(" / ") || "Genre unavailable"}
           </span>
-          <span className={s.details}>More on TVmaze ↗</span>
+          <span className={styles.details}>More on TVmaze ↗</span>
         </div>
       </a>
     </article>
