@@ -4,7 +4,7 @@ import styles from "./Body.module.css";
 import type { Movie } from "@/types/Movie.ts";
 import type { Dispatch, DispatchWithoutAction } from "react";
 import { Empty } from "./Empty/Empty.tsx";
-import { Movies } from "@/Main/Body/Movies/Movies.tsx";
+import { Movies } from "./Movies/Movies.tsx";
 import classNames from "classnames";
 
 interface Props {
