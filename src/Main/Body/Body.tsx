@@ -5,6 +5,7 @@ import type { Movie } from "@/types/Movie.ts";
 import type { Dispatch, DispatchWithoutAction } from "react";
 import { Empty } from "./Empty/Empty.tsx";
 import { Movies } from "@/Main/Body/Movies/Movies.tsx";
+import classNames from "classnames";
 
 interface Props {
   isPending: boolean;
@@ -52,7 +53,9 @@ export const Body = (props: Props) => {
             <button
               key={currGenre}
               type="button"
-              className={`${styles.genreBadge} ${currGenre === genre ? styles.genreBadgeActive : ""}`}
+              className={classNames(styles.genreBadge, {
+                [styles.genreBadgeActive]: currGenre === genre,
+              })}
               aria-pressed={currGenre === genre}
               onClick={() => onPickGenre(currGenre)}
             >

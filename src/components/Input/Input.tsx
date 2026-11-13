@@ -1,9 +1,11 @@
 import { Input as BaseInput } from "@base-ui/react/input";
 import { useId } from "react";
 import styles from "./Input.module.css";
+import classNames from "classnames";
 
-type InputProps = BaseInput.Props & {
+type InputProps = Omit<BaseInput.Props, "className"> & {
   label: string;
+  className?: string;
 };
 
 export const Input = ({ label, id, className, ...props }: InputProps) => {
@@ -18,14 +20,7 @@ export const Input = ({ label, id, className, ...props }: InputProps) => {
       <BaseInput
         {...props}
         id={inputId}
-        className={(state) =>
-          [
-            styles.input,
-            typeof className === "function" ? className(state) : className,
-          ]
-            .filter(Boolean)
-            .join(" ")
-        }
+        className={classNames(styles.input, className)}
       />
     </div>
   );
