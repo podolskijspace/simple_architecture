@@ -7,9 +7,9 @@ import styles from "./Movies.module.css";
 interface Props {
   movies: Movie[];
   onShowMore: DispatchWithoutAction;
-  withShowMoreBtn: Boolean;
+  hasMore: Boolean;
 }
-export const Movies = ({ movies, onShowMore, withShowMoreBtn }: Props) => {
+export const Movies = ({ movies, onShowMore, hasMore }: Props) => {
   return (
     <div>
       <div className={styles.grid}>
@@ -17,7 +17,7 @@ export const Movies = ({ movies, onShowMore, withShowMoreBtn }: Props) => {
           <MovieItem show={show} />
         ))}
       </div>
-      {withShowMoreBtn && (
+      {hasMore && (
         <div className={styles.showMore}>
           <Button onClick={onShowMore}>Show more</Button>
         </div>

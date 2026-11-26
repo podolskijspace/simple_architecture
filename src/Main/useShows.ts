@@ -1,21 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import type { Movie } from "@/types/Movie.ts";
 
-export const useShows = (param: string) => {
-  const query = param.trim();
-  const queryKey = ["shows", query];
+export const useShows = (params: {search: string, page: number, genre: string}) => {
+  params.search = params.search.trim();
+  const queryKey = ["shows", params];
   const queryFn = async ({ signal }) => {
     const response = await fetch(
-      `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`,
+      `${import.meta.env.VITE_API_URL}shows?q=${encodeURIComponent(params.search)}&page=${encodeURIComponent(params.page)}&genre=${encodeURIComponent(params.genre)}`,
       { signal },
     );
     if (!response.ok) throw new Error(`Request failed: ${response.status}`);
     return response.json();
   };
-
-  return useQuery<Movie[]>({
+  return useQuery<{data: Movie[], hasMore: boolean, genres: string[]}>({
     queryFn,
     queryKey,
-    enabled: query.length > 0,
+    enabled: params.search.length > 0,
   });
 };

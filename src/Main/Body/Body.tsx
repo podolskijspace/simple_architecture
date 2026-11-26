@@ -15,7 +15,7 @@ interface Props {
   genres: Movie.Genre[];
   genre: Movie.Genre;
   onPickGenre: Dispatch<Movie.Genre>;
-  withShowMoreBtn: Boolean;
+  hasMore: Boolean;
   onShowMore: DispatchWithoutAction;
 }
 export const Body = (props: Props) => {
@@ -27,7 +27,7 @@ export const Body = (props: Props) => {
     genres,
     genre,
     onPickGenre,
-    withShowMoreBtn,
+    hasMore,
     onShowMore,
   } = props;
 
@@ -72,7 +72,7 @@ export const Body = (props: Props) => {
         <Movies
           movies={movies}
           onShowMore={onShowMore}
-          withShowMoreBtn={withShowMoreBtn}
+          hasMore={hasMore}
         />
       ) : (
         <Empty />

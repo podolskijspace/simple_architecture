@@ -17,8 +17,8 @@ export const Main = () => {
     isError,
     isPending,
     handleRetry,
-    withShowMoreBtn,
     onShowMore,
+    hasMore,
   } = usePresenter();
 
   return (
@@ -34,7 +34,7 @@ export const Main = () => {
           isPending={isPending}
           onRetry={handleRetry}
           onPickGenre={onPickGenre}
-          withShowMoreBtn={withShowMoreBtn}
+          hasMore={hasMore}
           onShowMore={onShowMore}
         />
       )}
