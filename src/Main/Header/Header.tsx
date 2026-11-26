@@ -6,7 +6,7 @@ export const Header = () => {
       <a className={styles.brand} href="/">
         credits<span className={styles.brandDot}>✳</span>
       </a>
-      <span className={styles.tagline}>Every story has a beginning</span>
+      <span className={styles.tagline}>Every story has a beginning. 1</span>
     </header>
   );
 };
